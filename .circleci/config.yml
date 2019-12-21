@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: win/default 
+    -  image: windows-default # Windows machine image
+    -  resource_class: windows.medium
     steps:
       - checkout
       - run:
