@@ -24,4 +24,4 @@ jobs:
           command: dotnet build -c Release
           working_directory: ./api/api.csproj
       - store_artifacts:
-          path: .\bin\Release\netcoreapp2.1\win10-x64\publish\circleci-demo-windows.exe
+          path: ./api/api.csproj
