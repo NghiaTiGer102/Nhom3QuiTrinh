@@ -1,4 +1,4 @@
-version: 2.1
+version: 2.2
 
 orbs:
   win: circleci/windows@1.0.0
@@ -9,10 +9,7 @@ jobs:
       name: win/vs2019
       shell: powershell.exe
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dotnet-packages-v1-{{ checksum "api.csproj" }}
+      - checkout   
       steps:
       - checkout
       - run:
@@ -22,6 +19,6 @@ jobs:
        - run:
           name: Build
           command: dotnet build -c Release
-          working_directory: ./api/api.csproj
+          working_directory: ./api
       - store_artifacts:
           path: ./api/api.csproj
