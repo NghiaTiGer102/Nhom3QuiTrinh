@@ -2,9 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image:  mono:4.4.0.182
+      - image: jetcipher/circleci-dotnet-core:3.0
     steps:
       - checkout
       - run:
-          name: Restore
-          - MONO_IOMAP=case xbuild/t: Build/p:Configuration="Debug"/p:Platform="x86" API_QLQTPM.sln
+          name: build
+          command: dotnet msbuild -p:Configuration=Release
