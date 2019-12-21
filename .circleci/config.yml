@@ -1,10 +1,19 @@
-version: 2
+version: 2.1
+
+orbs:
+  win: circleci/windows@1.0.0
+
 jobs:
   build:
-    docker:
-      - image: jetcipher/circleci-dotnet-core:3.0
+    executor:
+      name: win/vs2019
+      shell: powershell.exe
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - dotnet-packages-v1-{{ checksum "./api/api.csproj" }}
       - run:
-          name: build
-          command: dotnet msbuild 
+          name: "build"
+          command: dotnet build
+
