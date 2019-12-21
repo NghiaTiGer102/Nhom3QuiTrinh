@@ -18,7 +18,7 @@ jobs:
           command: dotnet.exe restore
       - save_cache:
           paths:
-            - C:\Users\circleci\.nuget\packages
+            - packages
           key: dotnet-packages-v1-{{ checksum "./api/api.csproj" }}
 
       - run:
