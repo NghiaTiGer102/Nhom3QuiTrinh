@@ -27,6 +27,7 @@ namespace api.Controllers
         [HttpPost]
         public IHttpActionResult GetDSCauHoi(GetDSCauHoiParameter request)
         {
+
             var result = _businessLogic.GetDSCauHoi(request);
             return new ActionResult<GetDSCauHoiResponse>(result.Result, Request);
         }
