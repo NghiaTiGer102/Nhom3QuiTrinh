@@ -17,6 +17,5 @@ jobs:
           name: Running Tests
           command: dotnet test
           working_directory: ./api
-      - setup_remote_docker:
-          docker_layer_caching: true
+
    
