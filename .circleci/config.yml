@@ -7,4 +7,4 @@ jobs:
       - checkout
       - run:
           name: Restore
-          command: dotnet msbuild -p:Configuration=Release
+          - MONO_IOMAP=case xbuild/t: Build/p:Configuration="Debug"/p:Platform="x86" API_QLQTPM.sln
