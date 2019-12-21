@@ -13,6 +13,10 @@ jobs:
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "./api/api.csproj" }}
+       - run:
+          name: "build"
+          command: dotnet restore      
+            
       - run:
           name: "build"
           command: dotnet build
