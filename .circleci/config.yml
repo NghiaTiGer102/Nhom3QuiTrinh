@@ -2,8 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    -  image: windows-default # Windows machine image
-    -  resource_class: windows.medium
+       - image: microsoft/aspnetcore-build
     steps:
       - checkout
       - run:
