@@ -6,10 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Restore
-          command: dotnet restore
-          working_directory: api/api.csproj
-      - run:
           name: Build
           command: dotnet build -c Release
           working_directory: api/api.csproj
