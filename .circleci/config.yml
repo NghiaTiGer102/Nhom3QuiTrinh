@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jetcipher/circleci-dotnet-core:3.0
+      - image:  mono:4.4.0.182
     steps:
       - checkout
       - run:
