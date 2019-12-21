@@ -1,21 +1,23 @@
-version: 2
+version: 2.1
+
+orbs:
+  windows: circleci/windows@2.2.0
+
 jobs:
-  build:
-    docker:
-      - image: jetcipher/circleci-dotnet-core:3.0
+  test:
+    description: Setup and run application tests
+    executor:
+      name: windows/default
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - dotnet-packages-v1-{{ checksum "api/api.csproj" }}
       - run:
-          name: Restore
-          command: dotnet restore
-          working_directory: ./api
-      - run:
-          name: Build
-          command: dotnet build -c Release
-          working_directory: ./api
-      - run:
-          name: Running Tests
-          command: dotnet test
-          working_directory: ./api
-
-   
+          name: "Install project dependencies"
+          command: dotnet.exe restore
+      - save_cache:
+          paths:
+            - C:\Users\circleci\.nuget\packages
+          key: dotnet-packages-v1-{{ checksum "api/api.csproj" }}
+      
