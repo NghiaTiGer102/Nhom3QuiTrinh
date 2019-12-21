@@ -7,6 +7,6 @@ jobs:
       - checkout
       - run:
           name: Build
-          command: dotnet build -c Release
+          command: dotnet build
           working_directory: api/api.csproj
 
