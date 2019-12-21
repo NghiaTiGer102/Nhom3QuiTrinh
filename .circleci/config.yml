@@ -12,10 +12,10 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dotnet-packages-v1-{{ checksum "./api/api.csproj" }}
+            - dotnet-packages-v1-{{ checksum "api/api.csproj" }}
             
             
       - run:
           name: "build"
           command: dotnet msbuild
-          working_directory: ./api/api
+          working_directory: api/api.csproj
