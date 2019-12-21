@@ -8,5 +8,5 @@ jobs:
       - run:
           name: Build
           command: dotnet build
-          working_directory: api/api.csproj
+          working_directory: Nhom3QuiTrinh/api/api.csproj
 
