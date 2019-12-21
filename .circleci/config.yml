@@ -7,4 +7,4 @@ jobs:
       - checkout
       - run:
           name: Restore
-          command: dotnet build
+          command: dotnet msbuild
