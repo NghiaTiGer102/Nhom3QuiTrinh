@@ -1,24 +1,22 @@
-version: 2.2
-
-orbs:
-  win: circleci/windows@1.0.0
-
+version: 2
 jobs:
   build:
-    executor:
-      name: win/vs2019
-      shell: powershell.exe
+    docker:
+      - image: jetcipher/circleci-dotnet-core:3.0
     steps:
-      - checkout   
-      steps:
       - checkout
       - run:
           name: Restore
           command: dotnet restore
-          working_directory: ./Api
-       - run:
+          working_directory: ./api
+      - run:
           name: Build
           command: dotnet build -c Release
           working_directory: ./api
-      - store_artifacts:
-          path: ./api/api.csproj
+      - run:
+          name: Running Tests
+          command: dotnet test
+          working_directory: ./api
+      - setup_remote_docker:
+          docker_layer_caching: true
+   
