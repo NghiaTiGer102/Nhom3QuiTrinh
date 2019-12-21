@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: jetcipher/circleci-dotnet-core:3.0
     steps:
-      - Build
+      - checkout
       - run:
           name: build
           command: dotnet msbuild 
