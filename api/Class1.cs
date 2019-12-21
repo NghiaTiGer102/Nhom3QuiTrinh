@@ -7,5 +7,5 @@ namespace api
 {
     public class Class1
     {
-    }asdasd
+    }
 }
