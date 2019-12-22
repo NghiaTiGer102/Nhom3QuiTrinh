@@ -168,7 +168,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Controllers\BaiHocController.cs" />
     <Compile Include="Controllers\CapDoController.cs" />
     <Compile Include="Controllers\CauHoiController.cs" />
@@ -295,6 +294,7 @@
       <Name>EntityData</Name>
     </ProjectReference>
   </ItemGroup>
+  
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
