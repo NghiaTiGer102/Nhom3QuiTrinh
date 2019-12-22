@@ -1,21 +1,10 @@
-version: 2.1
-
-docker:
-      - image: microsoft/aspnetcore-build:2.0
-
+version: 2
 jobs:
   build:
-    executor:
-      name: win/vs2019
-      shell: powershell.exe
+    docker:
+      - image: microsoft/aspnetcore-build:2.0
     steps:
-      - checkout  
-      
-      - run:
-          name: "Run Build step"
-          command: dotnet restore
-
-      - run:
-          name: "Run Build step"
-          command: dotnet build
-     
+      - checkout
+      - run: find .
+      - run: dotnet restore
+      - run: dotnet build
